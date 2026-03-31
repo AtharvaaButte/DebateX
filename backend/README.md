@@ -31,6 +31,5 @@ Minimal, hackathon-friendly backend for the Debate Platform project.
    ```
 
 ## Architecture Notes
-* Data resets on every server restart (In-Memory).
 * Firebase ID Tokens are strictly required for private endpoints via the `Authorization: Bearer <token>` header.
 * In AI mode, Gemini's response turn happens asynchronously when the user submits their argument. The client simply polls `GET /debate/:roomId` to detect if the `currentTurn` has handed back to them and polls `/arguments` to pull the latest AI text.
